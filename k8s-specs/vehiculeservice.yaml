@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehiculeservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vehiculeservice
+  template:
+    metadata:
+      labels:
+        app: vehiculeservice
+    spec:
+      containers:
+      - name: vehiculeservice
+        image: registry.dev.svc.cluster.local:5000/vehiculeservice
+        ports:
+        - containerPort: 8082
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://mysql:3306/client_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+        - name: SPRING_DATASOURCE_USERNAME
+          value: root
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "123456"
+        - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+          value: update
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vehiculeservice
+spec:
+  selector:
+    app: vehiculeservice
+  ports:
+  - port: 8082
+    targetPort: 8082
+    protocol: TCP
