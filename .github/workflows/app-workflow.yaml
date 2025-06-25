@@ -65,8 +65,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t registry.dev.svc.cluster.local:5000/visits-service:latest .
-          docker push registry.dev.svc.cluster.local:5000/visits-service:latest
+          docker build -t registry.dev.svc.cluster.local:5000/clientservice:latest .
+          docker push registry.dev.svc.cluster.local:5000/clientservice:latest
 
   Test-on-cluster:
     runs-on: self-hosted
