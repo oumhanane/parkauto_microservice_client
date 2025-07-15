@@ -32,3 +32,47 @@ build/
 ### VS Code ###
 .vscode/
 actions-runner/
+.idea/
+*.swp
+
+# === Terraform ===
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfplan
+crash.log
+override.tf
+terraform.tfvars.json
+
+# === Kubernetes ===
+*.yaml~
+*.bak
+kubeconfig*
+
+# === Docker ===
+*.pid
+docker-compose.override.yml
+.env
+.env.*
+Dockerfile~
+docker-compose.yml~
+
+# === System files ===
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+logs/
+*.log
+*.out
+*.err
+
+# === Tests ===
+.cache/
+pytest_cache/
+.coverage
+.coverage.*
+
+# === Java / Maven ===
+target/
