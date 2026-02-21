@@ -116,7 +116,6 @@ Accès aux dashboards :
 Prometheus : http://localhost:9090
 
 Grafana : http://localhost:3000
-Identifiants : admin / prom-operator
 
 Notes
 
@@ -203,7 +202,6 @@ Map gateway.local to 127.0.0.1 in the /etc/hosts file and run:
 
 minikube tunnel
 
-
 Then access the API at:
 
 http://gateway.local
@@ -242,13 +240,9 @@ Prometheus:
 
 http://localhost:9090
 
-
 Grafana:
 
 http://localhost:3000
-
-
-Credentials: admin / prom-operator
 
 Notes
 
